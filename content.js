@@ -75,6 +75,29 @@ function someMethod(e) {
 
                 //test F
                 case 70:
+                    ggg = document.getElementsByClassName('fi');
+                    var g = ggg[0];
+                    //console.log( 'debag');
+                    window.alert( g );
+                    //var ggg = document.getElementsByClassName('gLFyf');
+                    //window.alert("aaa:  " + ggg[] );
+                    //$('gLFyf').first.focus();
+                    //var url_a_tag = document.getElementsByClassName('r');
+                    //var title = document.getElementsByClassName('ellip');
+                    //var content = document.getElementsByClassName('st');
+                    //var data = '';
+
+                    ////タイトルタグだけあってURLがない場合にエラーが出るのでurl_a_tag.lengthとしてある
+                    //for(var i = 0 ;  i < url_a_tag.length ; i++){
+                    //    var a_tag = url_a_tag[i].getElementsByTagName('a');
+
+                    //    data = data + title[i].innerText+'\n';
+                    //    data = data + a_tag[0].href+'\n';
+                    //    data = data + content[i].innerText+'\n';
+                    //    data = data + '\n';
+                    //}
+                    //console.log(data);
+                    //console.log( 'debag' );
                     break;
 
 
