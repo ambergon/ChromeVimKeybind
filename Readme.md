@@ -5,6 +5,8 @@ Google Chromeにおける操作をマウスを使わずに快適なブラウジ�
 
 ##key bind
 
+- :default google chromeにもともと設定してあるkey
+- :add この拡張機能で追加される動作。
 
 | 対応 | key | 動作 |
 |:--:|:--:|:--:|
@@ -17,6 +19,23 @@ Google Chromeにおける操作をマウスを使わずに快適なブラウジ�
 | default | < ALT + Space & R > | サイズを元に戻す |
 |||
 | default | < Ctrl + L > | アドレスバーにフォーカス |
+|||
+| default | < Ctrl + D > | BookMarkする |
+|||
+| default | < Space > | 1画面ずつ下げる |
+| default | < Shift + Space > | 1画面ずつ上げる |
 | add | <> | |
+| add | < Shift + N > | 次に進む |
+| add | < Shift + P > | 前に戻る |
+| add | < J > | 下に進む |
+| add | < K > | 上に進む |
+| add | < Shift + G > | Topに移動 |
+| add | < G + G > | Bottomに移動 |
+|||
+| add | <> | Googleの検索結果において |
+| add | < Shift + J > | 下に項目を選択 |
+| add | < Shift + K > | 上に項目を選択 |
+| add | < enter > | 選択している項目を開く |
+
 
 

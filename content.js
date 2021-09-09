@@ -1,42 +1,40 @@
-
-let input = document.querySelector('input');
-var focus_status = false;
-
-input.onfocus = inputFocus;
-input.onblur = inputBlur;
-
-function inputFocus() {
-    //input.value = '';
-    focus_status = true;
-}
-function inputBlur() {
-    focus_status = false;
-}
-
-
-
-
-
-function register(){
-    const that = this;
-    window.addEventListener('keydown',function(e) { that.someMethod(e); });
-}
-
-
 //一つ前の入力を保存
 var before_key;
 
-//one of list
-var choose_int = -1;
-//緑
+//選択項目の色:緑
 var choose_color = '#008000';
-//var choose_color = '#ea5532';
 
 //google class名
 var chrome_class_name = 'yuRUbf';
+
+//one of list
+var choose_int = -1;
 //配列化
 div_list = document.getElementsByClassName( chrome_class_name );
 
+
+//on focus
+var focus_status = false;
+let input_focus = document.querySelector('input');
+
+//console.log( input_focus );
+//inputが存在しない場合処理しない
+if( input_focus != null ){
+    input_focus.onfocus = input_Focus;
+    input_focus.onblur = input_Blur;
+}
+function input_Focus() {
+    focus_status = true;
+}
+function input_Blur() {
+    focus_status = false;
+}
+
+//key event
+function ChromeVimKeyBind(){
+    const that = this;
+    window.addEventListener('keydown',function(e) { that.someMethod(e); });
+}
 function someMethod(e) {
 
     if(focus_status == false){
@@ -68,10 +66,7 @@ function someMethod(e) {
                             //選択した項目の背景色を変更
                             block = div_list[ choose_int ];
                             block.style.backgroundColor = choose_color;
-
-                            //console.log( block );
                         }
-                        //console.log( choose_int );
                     }
                     break;
                     
@@ -91,12 +86,11 @@ function someMethod(e) {
                             //選択した項目の背景色を変更
                             block = div_list[ choose_int ];
                             block.style.backgroundColor = choose_color;
-
-                            //console.log( block );
                         }
-                        //console.log( choose_int );
                     }
                     break;
+
+                //G + go to bottom
                 case 71:
                     var element = document.documentElement;
                     var bottom = element.scrollHeight - element.clientHeight;
@@ -131,25 +125,12 @@ function someMethod(e) {
                     }
                     break;
 
-
-
-
                 //enter
                 case 13:
                     if(choose_int != -1 && choose_int != div_list.length ){
-                        var text = div_list[ choose_int ];
-                        var style = div_list[ choose_int ].style;
                         var raw_text = div_list[ choose_int ].innerHTML;
-
                         var result = raw_text.match(/href=\".*?\"/gi);
-
-                        //console.log( text );
-                        //console.log( style );
-                        //console.log( raw_text );
-                        //console.log( result[0] );
-
                         var link = result[0].slice( 5 ).replace(/"/g , '');
-                        console.log( link );
                         window.open( link , '_self');
 
                     }
@@ -158,8 +139,6 @@ function someMethod(e) {
                 //F
                 case 70:
                     break;
-
-
                 //default:
             }
         }
@@ -168,8 +147,7 @@ function someMethod(e) {
     }
 }
 
-register();
-
+ChromeVimKeyBind();
 
 
 
