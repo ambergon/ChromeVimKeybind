@@ -155,6 +155,13 @@ function someMethod(e) {
                     }
                     break;
 
+                //yy 現在のリンクをクリップボードにコピー
+                case 89:
+                    if( before_key == 89 ){
+                        navigator.clipboard.writeText( window.location.href );
+                    }
+                    break;
+
                 //F
                 case 70:
                     break;
