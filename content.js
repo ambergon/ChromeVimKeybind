@@ -89,7 +89,17 @@ function someMethod(e) {
                         }
                     }
                     break;
-
+                 
+                //Shift + enter 別のwindowで開く
+                case 13:
+                    if(choose_int != -1 && choose_int != div_list.length ){
+                        var raw_text = div_list[ choose_int ].innerHTML;
+                        var result = raw_text.match(/href=\".*?\"/gi);
+                        var link = result[0].slice( 5 ).replace(/"/g , '');
+                        window.open( link );
+                    }
+                    break;
+                 
                 //G + go to bottom
                 case 71:
                     var element = document.documentElement;
@@ -102,6 +112,16 @@ function someMethod(e) {
         //Ctrl = true
         else if(e.ctrlKey){
             switch(e.keyCode){
+
+                //Ctrl + enter 別のタブで開く
+                case 13:
+                    if(choose_int != -1 && choose_int != div_list.length ){
+                        var raw_text = div_list[ choose_int ].innerHTML;
+                        var result = raw_text.match(/href=\".*?\"/gi);
+                        var link = result[0].slice( 5 ).replace(/"/g , '');
+                        window.open( link );
+                    }
+                    break;
             }
 
         //Ctrl = else
@@ -132,7 +152,6 @@ function someMethod(e) {
                         var result = raw_text.match(/href=\".*?\"/gi);
                         var link = result[0].slice( 5 ).replace(/"/g , '');
                         window.open( link , '_self');
-
                     }
                     break;
 
