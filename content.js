@@ -90,13 +90,13 @@ function someMethod(e) {
                     }
                     break;
                  
-                //Shift + enter 別のwindowで開く
+                //Shift + enter 
                 case 13:
                     if(choose_int != -1 && choose_int != div_list.length ){
                         var raw_text = div_list[ choose_int ].innerHTML;
                         var result = raw_text.match(/href=\".*?\"/gi);
                         var link = result[0].slice( 5 ).replace(/"/g , '');
-                        window.open( link );
+                        window.open( link , '_self');
                     }
                     break;
                  
