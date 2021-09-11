@@ -10,13 +10,15 @@ Google Chromeにおける操作をマウスを使わずに快適なブラウジ�
 ```
 git clone https://github.com/ambergon/Chrome_Vim_keybind
 ```
-Chrome 拡張機能 chrome://extensions/
-デベロッパーモードを有効化
-パッケージ化されていない拡張機能を読み込む
-指定フォルダ ：~保存先/Chrome_Vim_keybind
+[Chrome 拡張機能](chrome://extensions/)を開く <br>
+デベロッパーモードを有効化 <br>
+パッケージ化されていない拡張機能を読み込む <br>
 
 ![tutorial](/tutorial/tutorial.png)
+指定フォルダ ：~保存先/Chrome_Vim_keybind <br>
 ![tutorial](/tutorial/tutorial_2.png)
+読み込まれている場合は拡張機能画面で確認できるようになります<br>
+![tutorial](/tutorial/tutorial_3.png)
 
 ## key bind
 
