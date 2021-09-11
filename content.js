@@ -20,6 +20,7 @@ let input_focus_all = document.querySelectorAll('input');
 let has_focus = false;
 let on_focus_content = null;
 
+
 //console.log( first_input_focus );
 //inputが存在しない場合処理しない
 if( first_input_focus != null ){
@@ -51,21 +52,20 @@ function testMethod(e) {
     //focus状態ではない
     if(focus_status == false){
         //on Shift
-        if(e.shiftKey){
+        //if(e.shiftKey){
+        //    switch(e.keyCode){
+        //        //I input要素の中身を消してfocus
+        //        case 73:
+        //            if( has_focus ){
+        //                first_input_focus.value = '';
+        //                first_input_focus.focus();
+        //            }
+        //            break;
+        //    }
+        //}
+        if(e.ctrlKey){
             switch(e.keyCode){
-                //I input要素の中身を消してfocus
-                case 73:
-                    if( has_focus ){
-                        first_input_focus.value = '';
-                        first_input_focus.focus();
-                    }
-                    break;
-            }
-
-        //off Shift
-        }else{
-            switch(e.keyCode){
-                //I input要素にfocus
+                //Ctrl + I input要素にfocus
                 case 73:
                     if( has_focus ){
                         first_input_focus.focus();
@@ -74,6 +74,8 @@ function testMethod(e) {
                     break;
             }
         }
+        //off Shift
+        //off Ctrl
     }
 }
 function someMethod(e) {

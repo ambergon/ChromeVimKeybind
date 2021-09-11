@@ -43,6 +43,8 @@ chrome://extensions/
 |||
 | default | < Ctrl + D > | BookMarkする |
 |||
+| default | < Ctrl + Shift + I > | 検証 |
+|||
 | default | < Space > | 1画面ずつ下げる |
 | default | < Shift + Space > | 1画面ずつ上げる |
 | add | <> | |
@@ -62,8 +64,7 @@ chrome://extensions/
 |||
 | add | < Y + Y > | 現在表示しているサイトのURLをクリップボードにコピー |
 |||
-| add | < I > | input要素があれば入力モード(カーソルは末尾) |
-| add | < Shift + I > | input要素があれば入力モードで既存の文字を削除 |
+| add | < Ctrl + I > | input要素があれば入力モード(カーソルは末尾) |
 | add | < J + J > | 入力モードを終了する。 |
 
 
