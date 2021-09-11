@@ -6,6 +6,18 @@ ambergon
 
 Google Chromeにおける操作をマウスを使わずに快適なブラウジングをするために開発します
 
+## install 
+```
+git clone https://github.com/ambergon/Chrome_Vim_keybind
+```
+Chrome 拡張機能 chrome://extensions/
+デベロッパーモードを有効化
+パッケージ化されていない拡張機能を読み込む
+指定フォルダ ：~保存先/Chrome_Vim_keybind
+
+![tutorial](/tutorial/tutorial.png)
+![tutorial](/tutorial/tutorial_2.png)
+
 ## key bind
 
 - :default google chromeにもともと設定してあるkey(一部のみ記載)

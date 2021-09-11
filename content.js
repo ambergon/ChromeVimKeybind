@@ -31,7 +31,7 @@ if( first_input_focus != null ){
         input_focus_all[i].onfocus = input_Focus;
         input_focus_all[i].onblur = input_Blur;
     }
-    console.log( input_focus_all.length );
+    //console.log( input_focus_all.length );
 }
 function input_Focus() {
     focus_status = true;
