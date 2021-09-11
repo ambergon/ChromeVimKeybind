@@ -10,7 +10,10 @@ Google Chromeにおける操作をマウスを使わずに快適なブラウジ�
 ```
 git clone https://github.com/ambergon/Chrome_Vim_keybind
 ```
-[Chrome 拡張機能](chrome://extensions/)を開く <br>
+Chrome 拡張機能 を開く <br>
+```
+chrome://extensions/
+```
 デベロッパーモードを有効化 <br>
 パッケージ化されていない拡張機能を読み込む <br>
 
