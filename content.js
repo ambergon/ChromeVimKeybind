@@ -15,25 +15,70 @@ div_list = document.getElementsByClassName( chrome_class_name );
 
 //on focus
 var focus_status = false;
-let input_focus = document.querySelector('input');
+let first_input_focus = document.querySelector('input');
+let input_focus_all = document.querySelectorAll('input');
+let has_focus = false;
+let on_focus_content = null;
 
-//console.log( input_focus );
+//console.log( first_input_focus );
 //inputが存在しない場合処理しない
-if( input_focus != null ){
-    input_focus.onfocus = input_Focus;
-    input_focus.onblur = input_Blur;
+if( first_input_focus != null ){
+    //input要素が存在する。
+    has_focus = true;
+    //すべてのinput要素に適用させる
+    for( i = 0 ; i < input_focus_all.length ; i++ ){
+        console.log( input_focus_all[i] );
+        input_focus_all[i].onfocus = input_Focus;
+        input_focus_all[i].onblur = input_Blur;
+    }
+    console.log( input_focus_all.length );
 }
 function input_Focus() {
     focus_status = true;
+    on_focus_content = document.activeElement;
+    //on_focus_content = null;
+    console.log( 'true : ' + on_focus_content.value);
+    //on_focus_content .blur();
 }
 function input_Blur() {
     focus_status = false;
+    console.log( 'false' );
 }
 
 //key event
 function ChromeVimKeyBind(){
     const that = this;
     window.addEventListener('keydown',function(e) { that.someMethod(e); });
+    window.addEventListener('keyup',function(e) { that.testMethod(e); });
+}
+function testMethod(e) {
+    //focus状態ではない
+    if(focus_status == false){
+        //on Shift
+        if(e.shiftKey){
+            switch(e.keyCode){
+                //I input要素の中身を消してfocus
+                case 73:
+                    if( has_focus ){
+                        first_input_focus.value = '';
+                        first_input_focus.focus();
+                    }
+                    break;
+            }
+
+        //off Shift
+        }else{
+            switch(e.keyCode){
+                //I input要素にfocus
+                case 73:
+                    if( has_focus ){
+                        first_input_focus.focus();
+                        first_input_focus.setSelectionRange(-1,-1);
+                    }
+                    break;
+            }
+        }
+    }
 }
 function someMethod(e) {
 
@@ -161,16 +206,30 @@ function someMethod(e) {
                         navigator.clipboard.writeText( window.location.href );
                     }
                     break;
-
+                 
                 //F
                 case 70:
                     break;
                 //default:
             }
         }
-        //keyの保存
-        before_key = e.keyCode;
+     
+    //onFocus
+    }else{
+        switch(e.keyCode){
+            //J + J input要素から離脱
+            case 74:
+                if( before_key == 74 ){
+                    var blur_text = '' + on_focus_content.value;
+                    on_focus_content.value = blur_text.slice( 0 , -1 );
+                    on_focus_content.blur();
+                }
+                break;
+        }
+
     }
+    //keyの保存
+    before_key = e.keyCode;
 }
 
 ChromeVimKeyBind();
