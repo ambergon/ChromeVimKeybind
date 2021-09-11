@@ -27,7 +27,7 @@ if( first_input_focus != null ){
     has_focus = true;
     //すべてのinput要素に適用させる
     for( i = 0 ; i < input_focus_all.length ; i++ ){
-        console.log( input_focus_all[i] );
+        //console.log( input_focus_all[i] );
         input_focus_all[i].onfocus = input_Focus;
         input_focus_all[i].onblur = input_Blur;
     }
@@ -36,13 +36,9 @@ if( first_input_focus != null ){
 function input_Focus() {
     focus_status = true;
     on_focus_content = document.activeElement;
-    //on_focus_content = null;
-    console.log( 'true : ' + on_focus_content.value);
-    //on_focus_content .blur();
 }
 function input_Blur() {
     focus_status = false;
-    console.log( 'false' );
 }
 
 //key event
