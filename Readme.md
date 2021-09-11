@@ -4,7 +4,8 @@ ambergon
 
 ## 用途
 
-Google Chromeにおける操作をマウスを使わずに快適なブラウジングをするために開発します
+Google Chromeにおける操作をマウスを使わずに快適なブラウジングをするために作成<br>
+![tutorial](/tutorial/tutorial.gif) <br>
 
 ## install 
 ```
@@ -17,11 +18,12 @@ chrome://extensions/
 デベロッパーモードを有効化 <br>
 パッケージ化されていない拡張機能を読み込む <br>
 
-![tutorial](/tutorial/tutorial.png)
+![tutorial](/tutorial/tutorial.png) <br>
 指定フォルダ ：~保存先/Chrome_Vim_keybind <br>
-![tutorial](/tutorial/tutorial_2.png)
+![tutorial](/tutorial/tutorial_2.png) <br>
 読み込まれている場合は拡張機能画面で確認できるようになります<br>
-![tutorial](/tutorial/tutorial_3.png)
+![tutorial](/tutorial/tutorial_3.png) <br>
+
 
 ## key bind
 
