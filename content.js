@@ -12,14 +12,24 @@ var choose_int = -1;
 //配列化
 div_list = document.getElementsByClassName( chrome_class_name );
 
+//code block
+let content_location ;
+let first_code_block = document.querySelector( 'code' );
+let has_code_block = false;
+let code_blocks = document.querySelectorAll( 'code' );
+let code_block_int = -1;
+let border_style = "solid 2px #D7Df01";
+if( first_code_block != null ){
+    has_code_block = true;
+}
+
 
 //on focus
-var focus_status = false;
+let focus_status = false;
 let first_input_focus = document.querySelector('input');
 let input_focus_all = document.querySelectorAll('input');
 let has_focus = false;
 let on_focus_content = null;
-
 
 //console.log( first_input_focus );
 //inputが存在しない場合処理しない
@@ -32,7 +42,6 @@ if( first_input_focus != null ){
         input_focus_all[i].onfocus = input_Focus;
         input_focus_all[i].onblur = input_Blur;
     }
-    //console.log( input_focus_all.length );
 }
 function input_Focus() {
     focus_status = true;
@@ -150,6 +159,19 @@ function someMethod(e) {
                     var bottom = element.scrollHeight - element.clientHeight;
                     window.scroll({ top : bottom , behavior : 'smooth' });
                     break;
+                    
+                //yY code block copy
+                case 89:
+                    if( before_key == 89 ){
+                        if( has_code_block ){
+                            if( -1 != code_block_int && code_block_int != code_blocks.length ){
+                                var block_copy = code_blocks[code_block_int].innerText;
+                                navigator.clipboard.writeText( block_copy );
+                                //console.log( block_copy );
+                            }
+                        }
+                    }
+                    break;
             }
         }
 
@@ -208,20 +230,52 @@ function someMethod(e) {
                  
                 //F
                 case 70:
-                    //code内の記述を配列で取得する
-                    var x = document.querySelectorAll( 'code' );
-                    var y = x[0].innerText;
-                    console.log( y );
                     break;
                 //[
                 case 219:
-                    console.log( 'a' );
+                    //前
+                    if( has_code_block ){
+                        if( -1 < code_block_int ){
+                            //defaultカラーに戻す
+                            if( code_block_int != code_blocks.length ){
+                                code_blocks[code_block_int].style.border = null; 
+                            }
+                            code_block_int--;
+                            if( code_block_int != -1 ){
+                                //選択色
+                                code_blocks[code_block_int].style.border = border_style;
+                                //移動ブロック
+                                content_location = code_blocks[code_block_int].getBoundingClientRect();
+                                document.documentElement.scrollTop = content_location.top + window.pageYOffset -100;
+                            }
+                        }
+                    }
                     break;
+
                 //]
                 case 221:
-                    console.log( 'b' );
+                    //次
+                    if( has_code_block ){
+                        if( code_block_int < code_blocks.length ){
+                            //defaultカラーに戻す
+                            if( code_block_int != -1 ){
+                                code_blocks[code_block_int].style.border = null; 
+                            }
+
+                            code_block_int++;
+                            
+                            if( code_block_int != code_blocks.length ){
+                                //選択色
+                                code_blocks[code_block_int].style.border = border_style;
+                                //移動ブロック
+                                content_location = code_blocks[code_block_int].getBoundingClientRect();
+                                document.documentElement.scrollTop = content_location.top + window.pageYOffset -100;
+                            }
+                        }
+                    }
                     break;
                 //default:
+                    //break;
             }
         }
      
@@ -244,8 +298,6 @@ function someMethod(e) {
 }
 
 ChromeVimKeyBind();
-
-
 
 
 
