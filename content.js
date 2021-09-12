@@ -51,6 +51,7 @@ function ChromeVimKeyBind(){
 function testMethod(e) {
     //focus状態ではない
     if(focus_status == false){
+        //dialogなどに現在対応できていないのでフォーカス状態でも意図しない動作が起きる。
         //on Shift
         //if(e.shiftKey){
         //    switch(e.keyCode){
@@ -207,6 +208,18 @@ function someMethod(e) {
                  
                 //F
                 case 70:
+                    //code内の記述を配列で取得する
+                    var x = document.querySelectorAll( 'code' );
+                    var y = x[0].innerText;
+                    console.log( y );
+                    break;
+                //[
+                case 219:
+                    console.log( 'a' );
+                    break;
+                //]
+                case 221:
+                    console.log( 'b' );
                     break;
                 //default:
             }
