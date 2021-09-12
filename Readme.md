@@ -69,9 +69,9 @@ chrome://extensions/
 | add | < Ctrl + I > | input要素があれば入力モード(カーソルは末尾) |
 | add | < J + J > | 入力モードを終了する。 |
 |||
-| add | < Shift + [ > | <code>要素を検索し、下に移動する |
-| add | < Shift + ] > | <code>要素を検索し、上に移動する |
-| add | < y + Y > | 選択している<code>要素をクリップボードにコピーする |
+| add | < Shift + [ > | `<code>`要素を検索し、下に移動する |
+| add | < Shift + ] > | `<code>`要素を検索し、上に移動する |
+| add | < y + Y > | 選択している`<code>`要素をクリップボードにコピーする |
 
 
 
