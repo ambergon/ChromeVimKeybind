@@ -1,7 +1,3 @@
-## author
-ambergon
-[twitter](https://twitter.com/Sc_lFoxGon)
-
 ## 用途
 
 Google Chromeにおける操作をマウスを使わずに快適なブラウジングをするために作成<br>
@@ -77,3 +73,8 @@ chrome://extensions/
 
 ## license
 MIT license
+
+## author
+ambergon
+[twitter](https://twitter.com/Sc_lFoxGon)
+
