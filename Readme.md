@@ -46,8 +46,8 @@ chrome://extensions/
 | default | < Space > | 1画面ずつ下げる |
 | default | < Shift + Space > | 1画面ずつ上げる |
 | add | <> | |
-| add | < Shift + N > | 次に進む |
-| add | < Shift + P > | 前に戻る |
+| add | < Alt + N > | 次に進む |
+| add | < Alt + P > | 前に戻る |
 | add | < J > | 下に進む |
 | add | < K > | 上に進む |
 | add | < Shift + G > | Topに移動 |
@@ -61,13 +61,6 @@ chrome://extensions/
 | add | < Ctrl + enter > | 選択している項目を新しいtabで開く |
 |||
 | add | < Y + Y > | 現在表示しているサイトのURLをクリップボードにコピー |
-|||
-| add | < Ctrl + I > | input要素があれば入力モード(カーソルは末尾) |
-| add | < J + J > | 入力モードを終了する。 |
-|||
-| add | < Shift + [ > | `<code>`要素を検索し、下に移動する |
-| add | < Shift + ] > | `<code>`要素を検索し、上に移動する |
-| add | < y + Y > | 選択している`<code>`要素をクリップボードにコピーする |
 
 
 
