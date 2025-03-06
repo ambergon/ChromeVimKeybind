@@ -1,7 +1,7 @@
 {
     "name": "Chrome-Vim-Style",
     "version": "3.0.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "vim like browsing",
     "content_scripts": [{
         "matches": [ "<all_urls>" ],
